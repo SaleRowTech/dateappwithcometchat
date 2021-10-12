@@ -467,7 +467,6 @@
       */
      public function addMeetsUserData(Request $request, EntityManagerInterface $entityManager, MeetsUserRepository $meetsUserRepository){
          $request = $this->transformJsonBody($request);
-         var_dump($request);
          $meetsUser = new MeetsUser();
          $meetsUser->setDeviceID($request->get('deviceID'));
          $meetsUser->setNickname($request->get('nickname'));
