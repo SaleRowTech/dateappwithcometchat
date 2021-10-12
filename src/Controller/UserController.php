@@ -468,15 +468,15 @@
      public function addMeetsUserData(Request $request, EntityManagerInterface $entityManager, MeetsUserRepository $meetsUserRepository){
          $request = $this->transformJsonBody($request);
          $meetsUser = new MeetsUser();
-         $meetsUser->setDeviceID($request->get('deviceID'));
-         $meetsUser->setNickname($request->get('nickname'));
-         $meetsUser->setName($request->get('name'));
-         $meetsUser->setAge($request->get('age'));
-         $meetsUser->setZodiac($request->get('zodiac'));
-         $meetsUser->setMealPreferences($request->get('meal_preferences'));
-         $meetsUser->setHumanPreferences($request->get('human_preferences'));
-         $meetsUser->setPhoto($request->get('photo'));
-         $meetsUser->setGender($request->get('gender'));
+         $meetsUser->setDeviceID($request->get('a'));
+         $meetsUser->setNickname($request->get('b'));
+         $meetsUser->setName($request->get('c'));
+         $meetsUser->setAge($request->get('d'));
+         $meetsUser->setZodiac($request->get('e'));
+         $meetsUser->setMealPreferences($request->get('f'));
+         $meetsUser->setHumanPreferences($request->get('g'));
+         $meetsUser->setPhoto($request->get('h'));
+         $meetsUser->setGender($request->get('i'));
          try{
              $entityManager->persist($meetsUser);
              $entityManager->flush();
