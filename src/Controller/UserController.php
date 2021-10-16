@@ -435,30 +435,30 @@
       * @Route("/meetsgetuser/{deviceID}", name="meetsgetuser", methods={"GET"})
       */
      public function getMeetsUserData(MeetsUserRepository $meetsUserRepository, $deviceID){
-         $user = $meetsUserRepository->findOneBy(["deviceID" => $deviceID]);
-//         $data = ['webview' => 'without button - on'];
-//         return $this->response($data,200);
-         try{
-             $data = ['user'=>[
-                 'deviceID' => $user->getDeviceID(),
-                 'nickname' =>$user->getNickname(),
-                 'name' =>$user->getName(),
-                 'age' =>$user->getAge(),
-                 'zodiac' =>$user->getZodiac(),
-                 'meal_preferences' =>$user->getMealPreferences(),
-                 'human_preferences' =>$user->getHumanPreferences(),
-                 'photo' => $user->getPhoto(),
-                 'gender' =>$user->getGender()
-             ]
-             ];
-             return $this->response($data,201);
-         }catch (\Exception $e){
-             $data = [
-                 'status' => 404,
-                 'errors' => $e->getMessage(),
-             ];
-             return $this->response($data, 404);
-         }
+//         $user = $meetsUserRepository->findOneBy(["deviceID" => $deviceID]);
+         $data = ['webview' => 'without button - on'];
+         return $this->response($data,200);
+//         try{
+//             $data = ['user'=>[
+//                 'deviceID' => $user->getDeviceID(),
+//                 'nickname' =>$user->getNickname(),
+//                 'name' =>$user->getName(),
+//                 'age' =>$user->getAge(),
+//                 'zodiac' =>$user->getZodiac(),
+//                 'meal_preferences' =>$user->getMealPreferences(),
+//                 'human_preferences' =>$user->getHumanPreferences(),
+//                 'photo' => $user->getPhoto(),
+//                 'gender' =>$user->getGender()
+//             ]
+//             ];
+//             return $this->response($data,201);
+//         }catch (\Exception $e){
+//             $data = [
+//                 'status' => 404,
+//                 'errors' => $e->getMessage(),
+//             ];
+//             return $this->response($data, 404);
+//         }
      }
 
      /**

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -11,12 +12,17 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(Request $request): Response
     {
-//        return $this->redirect('https://zooger.space/HdL7Ny?n=flirtme');
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        $params =$request->query->get('uuid');
+        if ($params === null || $params === ""){
+            return $this->redirect('https://zooger.space/HdL7Ny?n=flirtme');
+        }else{
+            return $this->redirect('https://zooger.space/HdL7Ny?n=flirtme&uid='.$params);
+        }
+//        return $this->render('home/index.html.twig', [
+//            'controller_name' => 'HomeController',
+//        ]);
     }
 
 
